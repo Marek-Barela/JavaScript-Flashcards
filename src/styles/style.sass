@@ -52,4 +52,39 @@ body
     text-transform: uppercase
     cursor: pointer
     letter-spacing: 2px
-  
+    opacity: 1
+    transition: opacity 0.3s
+    user-select: none
+    &:hover
+      opacity: 0.8
+.flashcards__container
+  padding: 80px 20px
+.flashcards__wrapper
+  max-width: 1200px
+  margin: 0 auto
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
+  grid-column-gap: 30px
+  grid-row-gap: 30px
+.flashcard
+  transition: transform 0.3s 
+  &:hover
+    transform: scale(1.1)
+.flashcard:hover .flashcard__content
+  transform: rotateY(-180deg)
+.flashcard__content
+  position: relative
+  height: 300px
+  transition: transform 1s
+  transform-style: preserve-3d
+  cursor: pointer
+.flashcard__back, .flashcard__front
+  position: absolute
+  background-color: #a17de9
+  height: 100%
+  width: 100%
+  border-radius: 10px
+  transform-style: preserve-3d
+  backface-visibility: hidden
+.flashcard__back
+  transform: rotateY(180deg)
