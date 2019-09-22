@@ -1,5 +1,5 @@
 import Flashcard from "./js/models/Flashcard";
-import { handleFlashcardUpdate } from "./js/views/flashcardsView";
+import { handleFlashcardUpdate, flipFlashcard } from "./js/views/flashcardsView";
 import DOMElements from "./js/views/DOMSelectors";
 import "./styles/style.sass";
 
@@ -30,3 +30,12 @@ const flashcardController = e => {
 };
 
 DOMElements.flashcardForm.addEventListener("submit", flashcardController);
+
+DOMElements.flashcardsWrapper.addEventListener("click", (e) => {
+  if(e.target.className === "front-bottom--button" || e.target.className === "back-bottom--button") {
+    const flipId = e.target.dataset.flip;
+    const findFlashcard = state.flashcards.find(card => card.id === flipId);
+    findFlashcard.switchFlipedFlashcard(findFlashcard.isFliped);
+    flipFlashcard(flipId);
+  }
+})

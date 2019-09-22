@@ -6,6 +6,11 @@ class Flashcard {
     this.title = title;
     this.question = question;
     this.answer = answer;
+    this.isFliped = false;
+  }
+
+  switchFlipedFlashcard(isFliped) {
+    this.isFliped = !isFliped
   }
 }
 
