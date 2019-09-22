@@ -16,7 +16,7 @@
         <div class="header__wrapper">
           <h1 class="header--title">Flashcard</h1>
           <form class="header__form">
-            <input type="text" placeholder="Note title" />
+            <input type="text" placeholder="Title" />
             <input type="text" placeholder="Question" />
             <textarea type="text" placeholder="Answer"></textarea>
             <button type="submit">Add flashcard</button>
@@ -31,12 +31,36 @@
             <div class="flashcard">
               <div class="flashcard__content">
                 <div class="flashcard__back">
-                  <div class="flashcard__back--top">back top text</div>
-                  <div class="flashcard__back--bottom">back bottom text</div>
+                  <div class="flashcard__back-top">
+                    <button class="flashcard--delete-button">
+                      &times;
+                    </button>
+                    <h2>Title</h2>
+                  </div>
+                  <div class="flashcard__back-bottom">
+                    <p>answer</p>
+                    <div class="back-bottom__button-container">
+                      <button class="back-bottom--button">
+                        hide
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <div class="flashcard__front">
-                  <div class="flashcard__front--top">front top text</div>
-                  <div class="flashcard__front--bottom">front bottom text</div>
+                  <div class="flashcard__front-top">
+                    <button class="flashcard--delete-button">
+                      &times;
+                    </button>
+                    <h2>Title</h2>
+                  </div>
+                  <div class="flashcard__front-bottom">
+                    <p>question</p>
+                    <div class="front-bottom__button-container">
+                      <button class="front-bottom--button">
+                        show
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

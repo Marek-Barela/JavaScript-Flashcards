@@ -1,8 +1,15 @@
 *
   box-sizing: border-box
+h1, h2, p
+  margin: 0
+button, input, textarea
+  font-family: 'Montserrat', sans-serif
+  outline: 0
+  user-select: none
 body 
   margin: 0
   font-family: 'Montserrat', sans-serif
+  color: #333333
 .header__container
   height: 60vh
   min-height: 400px
@@ -23,20 +30,17 @@ body
   font-size: 2.2em
   font-weight: 200
   color: #ffffff
-  margin: 0
 .header__form
   display: flex
   flex-direction: column
   width: 250px
   input, textarea, button
     color: #ffffff
-    font-family: 'Montserrat', sans-serif
     background-color: rgba(255,255, 255, 0.2)
     border: 1px solid rgba(255,255, 255, 0.4)
     margin: 5px 0
     text-align: center
     padding: 11px
-    outline: 0
     border-radius: 3px
   ::placeholder
     color: #ffffff
@@ -54,7 +58,6 @@ body
     letter-spacing: 2px
     opacity: 1
     transition: opacity 0.3s
-    user-select: none
     &:hover
       opacity: 0.8
 .flashcards__container
@@ -66,10 +69,6 @@ body
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr))
   grid-column-gap: 30px
   grid-row-gap: 30px
-.flashcard
-  transition: transform 0.3s 
-  &:hover
-    transform: scale(1.1)
 .flashcard:hover .flashcard__content
   transform: rotateY(-180deg)
 .flashcard__content
@@ -78,13 +77,66 @@ body
   transition: transform 1s
   transform-style: preserve-3d
   cursor: pointer
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2)
+  &:hover
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2)
 .flashcard__back, .flashcard__front
   position: absolute
-  background-color: #a17de9
+  background-color: #ffffff
   height: 100%
   width: 100%
-  border-radius: 10px
   transform-style: preserve-3d
   backface-visibility: hidden
+  border-radius: 4px
+  overflow: hidden
 .flashcard__back
   transform: rotateY(180deg)
+.flashcard__back-top, .flashcard__front-top
+  position: relative
+  height: 50%
+  background-color: #a17de9
+  transform: skewY(5deg) scale(1.1) translateY(-15%)
+  h2
+    position: absolute
+    color: #ffffff
+    font-weight: 200
+    bottom: 40px
+    left: 50%
+    transform: skewY(-5deg) translateX(-50%)
+.flashcard--delete-button
+  position: absolute
+  background-color: transparent
+  font-weight: bold
+  font-size: 1em
+  color: #ffffff
+  border: 0
+  top: 20px
+  right: 15px
+  transform: skewY(-5deg)
+  cursor: pointer
+  transition: color 0.3s
+  &:hover
+    color: #53e3a6
+.flashcard__back-bottom, .flashcard__front-bottom
+  position: relative
+  height: 50%
+  p
+    font-size: 0.65em
+    height: 65%
+    width: 100%
+    padding: 14px
+    letter-spacing: 1px
+.back-bottom__button-container, .front-bottom__button-container
+  height: 35%
+  padding: 10px 14px
+  border-top: 1px solid rgba(0,0,0,0.1)
+  button
+    color: #ff9800
+    text-transform: uppercase
+    border: none
+    background-color: transparent
+    letter-spacing: 2px
+    padding: 4px 8px
+    cursor: pointer
+    &:hover
+      background-color: rgba(0,0,0,0.05)
