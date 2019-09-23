@@ -1,5 +1,6 @@
 import Flashcard from "./js/models/Flashcard";
-import { handleFlashcardUpdate, flipFlashcard, deleteFlashcard } from "./js/views/flashcardsView";
+import { clearFormInputs } from "./js/views/formViews";
+import { handleFlashcardUpdate, flipFlashcard } from "./js/views/flashcardsView";
 import DOMElements from "./js/views/DOMSelectors";
 import "./styles/style.sass";
 
@@ -12,6 +13,8 @@ const formController = () => {
   const title = DOMElements.title.value,
     question = DOMElements.question.value,
     answer = DOMElements.answer.value;
+
+  clearFormInputs();
 
   return {
     title,
