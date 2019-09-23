@@ -14,8 +14,6 @@ const formController = () => {
     question = DOMElements.question.value,
     answer = DOMElements.answer.value;
 
-  clearFormInputs();
-
   return {
     title,
     question,
@@ -27,9 +25,12 @@ const flashcardController = e => {
   e.preventDefault();
   const formData = formController();
   const { title, question, answer } = formData;
-  const newFlashcard = new Flashcard(title, question, answer);
-  state.flashcards.push(newFlashcard);
-  handleFlashcardUpdate(state.flashcards);
+  if(title && question && answer) {
+    const newFlashcard = new Flashcard(title, question, answer);
+    state.flashcards.push(newFlashcard);
+    clearFormInputs();
+    handleFlashcardUpdate(state.flashcards);
+  }
 };
 
 DOMElements.flashcardForm.addEventListener("submit", flashcardController);
