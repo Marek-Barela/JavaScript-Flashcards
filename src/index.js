@@ -1,5 +1,5 @@
 import Flashcard from "./js/models/Flashcard";
-import { handleFlashcardUpdate, flipFlashcard } from "./js/views/flashcardsView";
+import { handleFlashcardUpdate, flipFlashcard, deleteFlashcard } from "./js/views/flashcardsView";
 import DOMElements from "./js/views/DOMSelectors";
 import "./styles/style.sass";
 
@@ -37,5 +37,11 @@ DOMElements.flashcardsWrapper.addEventListener("click", (e) => {
     const findFlashcard = state.flashcards.find(card => card.id === flipId);
     findFlashcard.switchFlipedFlashcard(findFlashcard.isFliped);
     flipFlashcard(flipId);
+  }
+
+  else if(e.target.className === "flashcard--delete-button") {
+    const delteId = e.target.dataset.delete;
+    state.flashcards = state.flashcards.filter(card => card.id !== delteId);
+    handleFlashcardUpdate(state.flashcards);
   }
 })

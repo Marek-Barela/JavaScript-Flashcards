@@ -25,7 +25,7 @@ const createFlashcard = flashcard => {
         </div>
         <div class="flashcard__front">
           <div class="flashcard__front-top">
-            <button class="flashcard--delete-button">
+            <button class="flashcard--delete-button" data-delete=${id}>
               &times;
             </button>
             <h2>${title}</h2>
@@ -62,7 +62,7 @@ export const handleFlashcardUpdate = flashcards => {
 export const flipFlashcard = id => {
   const listOfFlashcards = DOMElements.flashcardsWrapper.children;
   const findFlashcardById = [...listOfFlashcards].find(card => card.id === id);
-  const getFlashcardContent = findFlashcardById.children[0]
+  const getFlashcardContent = findFlashcardById.children[0];
   if(getFlashcardContent.className === "flashcard__content") {
     getFlashcardContent.className = "flashcard__content--fliped"
   } else {
