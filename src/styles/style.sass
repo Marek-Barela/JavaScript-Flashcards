@@ -1,2 +1,152 @@
+*
+  box-sizing: border-box
+h1, h2, p
+  margin: 0
+button, input, textarea
+  font-family: 'Montserrat', sans-serif
+  outline: 0
+  user-select: none
 body 
   margin: 0
+  font-family: 'Montserrat', sans-serif
+  color: #333333
+.header__container
+  height: 60vh
+  min-height: 400px
+  background: #50a3a2
+  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%)
+  background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%)
+  background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%)
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%)
+.header__wrapper
+  max-width: 1200px
+  height: 100%
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+.header--title
+  font-size: 2.2em
+  font-weight: 200
+  color: #ffffff
+.header__form
+  display: flex
+  flex-direction: column
+  width: 250px
+  input, textarea, button
+    color: #ffffff
+    background-color: rgba(255,255, 255, 0.2)
+    border: 1px solid rgba(255,255, 255, 0.4)
+    margin: 5px 0
+    text-align: center
+    padding: 11px
+    border-radius: 3px
+  ::placeholder
+    color: #ffffff
+  ::-ms-input-placeholder
+    color: #ffffff
+  textarea
+    resize: none
+    min-height: 100px
+  button
+    font-size: 0.5em
+    color: #50a3a2
+    background-color: #ffffff
+    text-transform: uppercase
+    cursor: pointer
+    letter-spacing: 2px
+    opacity: 1
+    transition: opacity 0.3s
+    &:hover
+      opacity: 0.8
+.flashcards__container
+  padding: 80px 20px
+.flashcards__wrapper
+  max-width: 1200px
+  padding: 0 30px
+  margin: 0 auto
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))
+  grid-column-gap: 30px
+  grid-row-gap: 30px
+.flashcard__content, .flashcard__content--fliped
+  position: relative
+  height: 350px
+  transition: transform 1s
+  transform-style: preserve-3d
+  cursor: pointer
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2)
+  &:hover
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2)
+.flashcard__content--fliped
+  transform: rotateY(-180deg)
+.flashcard__back, .flashcard__front
+  position: absolute
+  background-color: #ffffff
+  height: 100%
+  width: 100%
+  transform-style: preserve-3d
+  backface-visibility: hidden
+  border-radius: 4px
+  overflow: hidden
+.flashcard__back
+  transform: rotateY(180deg)
+.flashcard__back-top, .flashcard__front-top
+  position: relative
+  height: 50%
+  transform: skewY(5deg) scale(1.1) translateY(-15%)
+  h2
+    font-size: 1em
+    position: absolute
+    text-align: center
+    color: #ffffff
+    font-weight: 200
+    bottom: 40px
+    left: 50%
+    transform: skewY(-5deg) translateX(-50%)
+    word-wrap: break-word
+    overflow: hidden
+.flashcard__front-top
+  background-color: #a17de9
+.flashcard__back-top
+  background-color: #444444
+.flashcard--delete-button
+  position: absolute
+  background-color: transparent
+  font-weight: bold
+  font-size: 1em
+  color: #ffffff
+  border: 0
+  bottom: 120px
+  right: 20px
+  transform: skewY(-5deg)
+  cursor: pointer
+  transition: color 0.3s
+  &:hover
+    color: #53e3a6
+.flashcard__back-bottom, .flashcard__front-bottom
+  position: relative
+  height: 50%
+  overflow: hidden
+  p
+    font-size: 0.65em
+    height: 65%
+    padding: 14px
+    letter-spacing: 1px
+    word-wrap: break-word
+    overflow: hidden
+.back-bottom__button-container, .front-bottom__button-container
+  height: 35%
+  padding: 10px 14px
+  border-top: 1px solid rgba(0,0,0,0.1)
+  button
+    color: #ff9800
+    text-transform: uppercase
+    border: none
+    background-color: transparent
+    letter-spacing: 2px
+    padding: 4px 8px
+    cursor: pointer
+    &:hover
+      background-color: rgba(0,0,0,0.05)

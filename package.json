@@ -1,5 +1,5 @@
 {
-  "name": "project-1",
+  "name": "flashcard",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,5 +24,8 @@
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
+  },
+  "dependencies": {
+    "uuid": "^3.3.3"
   }
 }
