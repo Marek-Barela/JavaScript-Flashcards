@@ -1,6 +1,6 @@
 # Flashcard
 
-Flashcard application created with MVC pattern
+Application created with MVC pattern
 
 ## Live
 
